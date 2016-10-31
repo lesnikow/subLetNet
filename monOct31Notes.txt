@@ -1,0 +1,29 @@
+Mon Oct 31 notes
+
+Ideas for improving net:
+
+1.	More layers
+
+2.	More data (100-> 1K, 10K)
+		> GPU needed here, probably
+
+3.	Use an existing net, and then "fine-tune" one our data
+
+		AlexNet
+		VGG
+		GoogLeNet
+		MSRA net ?
+
+
+4.	Have the bins reflect a distribution of the training data
+		10 bins
+
+For Wed:
+
+Adam:	Work on 2., train on 1K-10K images. given Rong's code
+
+Rong:	Work on debugging code from over weekend 
+
+Also have work organized in one repository. If it works, I suggest the subLetNet repo at https://www.github.org/lesnikow/subLetNet.git
+
+
