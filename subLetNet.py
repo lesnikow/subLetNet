@@ -118,8 +118,6 @@ numBins = 10
 x = tf.placeholder(tf.float32, [None, imgLength])
 y_ = tf.placeholder(tf.int64, [None])
 
-prediction = tf.placeholder(tf.float32, [None])
-
 # first convolution layer
 W_conv1 = weight_variable([5, 5, 1, 32])
 b_conv1 = bias_variable([32])
@@ -158,14 +156,21 @@ b_fc2 = bias_variable([numBins])
 
 y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 
+# prediction variable
+#pred = tf.Variable(0, name="pred")
+#newPred = tf.to_int64( tf.argmax(y_conv, 1) )
+#updatePred = tf.assign(pred, newPred)
+
 # train and evaluate
 cross_entropy = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(y_conv, y_))
 train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 correct_prediction = tf.equal(tf.argmax(y_conv,1), y_)
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
+init_op = tf.initialize_all_variables()
 with tf.Session() as sess:
-    sess.run(tf.initialize_all_variables())
+    sess.run(init_op)
+    #print("Prediction is: ", sess.run(pred))
 
     for i in range(numImages):
         print(str(i) + '/' + str(numImages))
@@ -179,15 +184,14 @@ with tf.Session() as sess:
             print("step %d, training accuracy %g"%(i, train_accuracy))
         print('label: ' + str(label) + '\n')
 
-        prediction  = tf.argmax(y_conv, 1)
+        #sess.run(updatePred)
+        #print(sess.run(pred))
 
-        #print(sess.run(prediction))
+        prediction = tf.argmax(y_conv, 1)
         
-        #sess2 = tf.Session()
-        #print(sess2.run(prediction))
+
         
         #print('prediction: %s' % prediction)
-     
         #print('label: ' + str(label) + ' & prediction: ' + str(tf.argmax(y_conv, 1)))
         train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
 
