@@ -90,8 +90,10 @@ def readLabels(labelPath) :
 
 # read in data
 imgDir = 'bos10/'
+#imgDir = 'bos100/train/'
 labelPath = 'labels/bosPrices.csv'
-# images
+
+#images
 imageIds, images = readImages(imgDir)
 
 # ground truth (labels)
@@ -168,8 +170,6 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 pred = tf.argmax(y_conv,1)
 
-
-
 init_op = tf.initialize_all_variables()
 with tf.Session() as sess:
     sess.run(init_op)
@@ -184,7 +184,7 @@ with tf.Session() as sess:
         if i%5 == 0:
             train_accuracy = accuracy.eval(feed_dict={
                 x:[img], y_: [label], keep_prob: 1.0})
-            print("step %d, training accuracy %g"%(i, train_accuracy))
+            print("\nstep %d, training accuracy %g\n"%(i, train_accuracy))
 
         print('prediction: ')
         print(sess.run(pred, feed_dict={x: [img], y_: [label], keep_prob: 1.0}))
@@ -193,17 +193,9 @@ with tf.Session() as sess:
         print(str(label))
         print('\n')
 
-    
-
-        
-        #print(sess.run(x), feed_dict={})
-        
-        
-        #print('prediction: %s' % prediction)
         #print('label: ' + str(label) + ' & prediction: ' + str(tf.argmax(y_conv, 1)))
         train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
 
-    print("test accuracy %g"%accuracy.eval(feed_dict={
-        x: images, y_: labels, keep_prob: 1.0}))    #to-do: replace with x:images_train
+    print("test accuracy %g"%accuracy.eval(feed_dict={x: images, y_: labels, keep_prob: 1.0}))    #to-do: replace with x:images_train
 
 # ----------------------- END --------------------------------
