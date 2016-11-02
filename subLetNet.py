@@ -157,15 +157,18 @@ b_fc2 = bias_variable([numBins])
 y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 
 # prediction variable
-#pred = tf.Variable(0, name="pred")
-#newPred = tf.to_int64( tf.argmax(y_conv, 1) )
-#updatePred = tf.assign(pred, newPred)
+#pred = tf.placeholder(tf.int64, [1,1])
+#predVariable = tf.Variable(pred, name="predVariable")
 
 # train and evaluate
 cross_entropy = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(y_conv, y_))
 train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 correct_prediction = tf.equal(tf.argmax(y_conv,1), y_)
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+pred = tf.argmax(y_conv,1)
+
+
 
 init_op = tf.initialize_all_variables()
 with tf.Session() as sess:
@@ -178,24 +181,29 @@ with tf.Session() as sess:
         label = labels[i]
         labelVector = [0 for element in range(numBins)]
         labelVector[label] = 1
-        if i%10 == 0:
+        if i%5 == 0:
             train_accuracy = accuracy.eval(feed_dict={
                 x:[img], y_: [label], keep_prob: 1.0})
             print("step %d, training accuracy %g"%(i, train_accuracy))
-        print('label: ' + str(label) + '\n')
 
-        #sess.run(updatePred)
-        #print(sess.run(pred))
+        print('prediction: ')
+        print(sess.run(pred, feed_dict={x: [img], y_: [label], keep_prob: 1.0}))
 
-        prediction = tf.argmax(y_conv, 1)
+        print('true label: ')
+        print(str(label))
+        print('\n')
+
+    
+
         
-
+        #print(sess.run(x), feed_dict={})
+        
         
         #print('prediction: %s' % prediction)
         #print('label: ' + str(label) + ' & prediction: ' + str(tf.argmax(y_conv, 1)))
         train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
 
     print("test accuracy %g"%accuracy.eval(feed_dict={
-        x: images, y_: labels, keep_prob: 1.0}))
+        x: images, y_: labels, keep_prob: 1.0}))    #to-do: replace with x:images_train
 
 # ----------------------- END --------------------------------
