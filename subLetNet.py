@@ -32,7 +32,6 @@ def readImages(imgDir) :
   row = 171
   col = 256
   images = np.zeros((len(os.listdir(imgDir)), row * col))
-  #print(images.shape)
   imageIds = []
   index = 0
   for imageName in os.listdir(imgDir) :
@@ -49,11 +48,7 @@ def readImages(imgDir) :
               #print(r, g, b)
               # convert rgb to greyscale
               data[i * col + j] = 0.2989 * r + 0.5870 * g + 0.1140 * b
-              #print(i * col + j)
-              #print(data[i * col + j])
               arr2d[i, j] = data[i * col + j]
-              #print(data)
-              #print(arr2d)
       images[index, :] = data[:]
       imageIds.append(imgId)
       index += 1
@@ -117,7 +112,7 @@ numBins = 10
 # ----------------------- START CNN --------------------------------
 #sess = tf.InteractiveSession()
 
-x = tf.placeholder(tf.float32, [None, imgLength])
+x = tf.placeholder(tf.float32, [None, None])
 y_ = tf.placeholder(tf.int64, [None])
 
 # first convolution layer
@@ -157,10 +152,7 @@ W_fc2 = weight_variable([1024, numBins])
 b_fc2 = bias_variable([numBins])
 
 y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
-
-# prediction variable
-#pred = tf.placeholder(tf.int64, [1,1])
-#predVariable = tf.Variable(pred, name="predVariable")
+prediction = tf.argmax(y_conv,1)
 
 # train and evaluate
 cross_entropy = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(y_conv, y_))
@@ -168,34 +160,32 @@ train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 correct_prediction = tf.equal(tf.argmax(y_conv,1), y_)
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-pred = tf.argmax(y_conv,1)
-
 init_op = tf.initialize_all_variables()
 with tf.Session() as sess:
     sess.run(init_op)
-    #print("Prediction is: ", sess.run(pred))
 
+    #Train net
     for i in range(numImages):
         print(str(i) + '/' + str(numImages))
         img = images[i, :]
         label = labels[i]
         labelVector = [0 for element in range(numBins)]
         labelVector[label] = 1
+
         if i%5 == 0:
-            train_accuracy = accuracy.eval(feed_dict={
-                x:[img], y_: [label], keep_prob: 1.0})
-            print("\nstep %d, training accuracy %g\n"%(i, train_accuracy))
+            train_accuracy = accuracy.eval( feed_dict={x:images, y_: labels, keep_prob: 1.0} )
+            print("\nstep %d, train accuracy is %g\n" % (i, train_accuracy))
 
         print('prediction: ')
-        print(sess.run(pred, feed_dict={x: [img], y_: [label], keep_prob: 1.0}))
+        print(sess.run(prediction, feed_dict={x: [img], y_: [label], keep_prob: 1.0}))
 
         print('true label: ')
         print(str(label))
         print('\n')
 
-        #print('label: ' + str(label) + ' & prediction: ' + str(tf.argmax(y_conv, 1)))
         train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
 
-    print("test accuracy %g"%accuracy.eval(feed_dict={x: images, y_: labels, keep_prob: 1.0}))    #to-do: replace with x:images_train
+    #Evaluate net
+    print("test accuracy is %g" % accuracy.eval(feed_dict={x: images, y_: labels, keep_prob: 1.0}))    #to-do: replace with x:images_train
 
 # ----------------------- END --------------------------------
