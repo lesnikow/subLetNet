@@ -31,7 +31,8 @@ def max_pool_2x2(x):
 def readImages(imgDir) :
   row = 171
   col = 256
-  images = np.zeros((len(os.listdir(imgDir)) - 1, row * col))
+  images = np.zeros((len(os.listdir(imgDir)), row * col))
+  print(images.shape)
   imageIds = []
   index = 0
   for imageName in os.listdir(imgDir) :
@@ -45,13 +46,18 @@ def readImages(imgDir) :
       for i in range(row):
           for j in range(col):
               r, g, b =  pixels[j, i]
+              #print(r, g, b)
               # convert rgb to greyscale
               data[i * col + j] = 0.2989 * r + 0.5870 * g + 0.1140 * b
+              #print(i * col + j)
+              #print(data[i * col + j])
               arr2d[i, j] = data[i * col + j]
+              #print(data)
+              #print(arr2d)
       images[index, :] = data[:]
       imageIds.append(imgId)
       index += 1
-      print(str(index) + '/' + str(len(os.listdir(imgDir)) - 1))
+      print(str(index) + '/' + str(len(os.listdir(imgDir))))
   return imageIds, images
 
 def isNumber(s):
@@ -83,8 +89,8 @@ def readLabels(labelPath) :
     return priceBins
 
 # read in data
-imgDir = 'subLetNet/bos100/'
-labelPath = 'subLetNet/labels/bosprices.csv'
+imgDir = 'bos100/'
+labelPath = 'labels/bosPrices.csv'
 
 # images
 imageIds, images = readImages(imgDir)
@@ -129,7 +135,6 @@ b_conv2 = bias_variable([64])
 h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)
 h_pool2 = max_pool_2x2(h_conv2)
 
-
 # pooling layer
 # this is how the input size is changed after two convolution layers
 # 	- for each max_pooling, input size shrinks to half (there are two max poolings)
@@ -161,7 +166,7 @@ for i in range(numImages):
 	label = labels[i]
 	labelVector = [0 for element in range(numBins)]
 	labelVector[label] = 1
-	if i%20 == 0:
+	if i%10 == 0:
 	    train_accuracy = accuracy.eval(feed_dict={
 	        x:[img], y_: [label], keep_prob: 1.0})
 	    print("step %d, training accuracy %g"%(i, train_accuracy))
