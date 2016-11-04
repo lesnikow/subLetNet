@@ -2,7 +2,7 @@ friNov2Notes
 
 Adam:	Y	Find out how to print tf tensors in a tf session
 		Y	Do a train/test split of data, rerun with 10 epochs 
-			Towards 10K image dataset built
+		P	Towards 10K image dataset built
 				Y 	Compute some statistics for binning
 				Goal: equifrequent buckets
 
