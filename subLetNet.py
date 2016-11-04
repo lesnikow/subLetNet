@@ -11,6 +11,17 @@ import numpy as np
 import os, math
 import csv
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+
 def weight_variable(shape):
   initial = tf.truncated_normal(shape, stddev=0.1)
   return tf.Variable(initial)
@@ -83,7 +94,7 @@ def readLabels(labelPath) :
     return priceBins
 
 # read in data
-imgDirTrain = 'bos10/'
+imgDirTrain = 'bos100/train/'
 imgDirTest = 'bos100/test/'
 labelPath= 'labels/bosPrices.csv'
 
@@ -169,14 +180,15 @@ init_op = tf.initialize_all_variables()
 with tf.Session() as sess:
     sess.run(init_op)
 
-    epoches = 10 
+    epoches = 33
 
     for epoch in range(epoches):
-		print("Starting epoch %d of training...\n" % epoch)
+		print("%s\nStarting epoch %d of training...%s\n" % (bcolors.OKBLUE, epoch, bcolors.ENDC))
 		
 		#Evaluate net
-		print("Evaluating net during epoch %d...\n" % epoch)
-		print("test accuracy is %g.\n" % accuracy.eval(feed_dict={x: imagesTest, y_: labelsTest, keep_prob: 1.0})) 
+		testAccuracy = accuracy.eval(feed_dict={x: imagesTest, y_: labelsTest, keep_prob: 1.0})  
+		#print("Evaluating net during epoch %d...\n" % epoch)
+		print("%s\nEpoch %d, test accuracy is %.2g %s\n" % (bcolors.OKGREEN, epoch, testAccuracy , bcolors.ENDC) )
 
 		#Train net
 		for i in range(numImages):
@@ -188,10 +200,10 @@ with tf.Session() as sess:
 
 			if i % 5 == 0:
 				train_accuracy = accuracy.eval( feed_dict={x:imagesTrain, y_: labelsTrain, keep_prob: 1.0} )
-				print("\nstep %d, training accuracy is %g\n" % (i, train_accuracy))
+				print("\n%sStep %d, training accuracy is %.2g %s\n" % (bcolors.WARNING, i, train_accuracy, bcolors.ENDC))
 			
 			predictionArray = sess.run(prediction, feed_dict={x: [img], y_: [label], keep_prob: 1.0})
-			print('prediction: \t %s\n' % predictionArray[0])
+			print('prediction: \t %s' % predictionArray[0])
 			print('true label: \t %s\n' % label)
 
 			train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
