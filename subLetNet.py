@@ -89,7 +89,9 @@ labelPath= 'labels/bosPrices.csv'
 
 
 # read in train, test images
+print("loading in train images...")
 imageIdsTrain, imagesTrain = readImages(imgDirTrain)
+print("loading in test images...")
 imageIdsTest, imagesTest = readImages(imgDirTest)
 
 # ground truth (labels)
@@ -102,7 +104,7 @@ for id in imageIdsTrain:
     labelsTrain.append(priceBins[id])
 for id in imageIdsTest:
     labelsTest.append(priceBins[id])
-print('training labels are %s' % labelsTrain)
+#print('training labels are %s' % labelsTrain)
 
 # img attr
 row = 171
@@ -167,28 +169,32 @@ init_op = tf.initialize_all_variables()
 with tf.Session() as sess:
     sess.run(init_op)
 
-    #Train net
-    for i in range(numImages):
-        print(str(i) + '/' + str(numImages))
-        img = imagesTrain[i, :]
-        label = labelsTrain[i]
-        labelVector = [0 for element in range(numBins)]
-        labelVector[label] = 1
+    epoches = 10 
 
-        if i%5 == 0:
-            train_accuracy = accuracy.eval( feed_dict={x:imagesTrain, y_: labelsTrain, keep_prob: 1.0} )
-            print("\nstep %d, train accuracy is %g\n" % (i, train_accuracy))
+    for epoch in range(epoches):
+		print("Starting epoch %d of training...\n" % epoch)
+		
+		#Evaluate net
+		print("Evaluating net during epoch %d...\n" % epoch)
+		print("test accuracy is %g.\n" % accuracy.eval(feed_dict={x: imagesTest, y_: labelsTest, keep_prob: 1.0})) 
 
-        print('prediction: ')
-        print(sess.run(prediction, feed_dict={x: [img], y_: [label], keep_prob: 1.0}))
+		#Train net
+		for i in range(numImages):
+			print(str(i) + '/' + str(numImages))
+			img = imagesTrain[i, :]
+			label = labelsTrain[i]
+			labelVector = [0 for element in range(numBins)]
+			labelVector[label] = 1
 
-        print('true label: ')
-        print(str(label))
-        print('\n')
+			if i % 5 == 0:
+				train_accuracy = accuracy.eval( feed_dict={x:imagesTrain, y_: labelsTrain, keep_prob: 1.0} )
+				print("\nstep %d, training accuracy is %g\n" % (i, train_accuracy))
+			
+			predictionArray = sess.run(prediction, feed_dict={x: [img], y_: [label], keep_prob: 1.0})
+			print('prediction: \t %s\n' % predictionArray[0])
+			print('true label: \t %s\n' % label)
 
-        train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
+			train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
 
-    #Evaluate net
-    #print("test accuracy is %g" % accuracy.eval(feed_dict={x: imagesTest, y_: labelsTest, keep_prob: 1.0}))    #to-do: replace with x:images_train
 
 # ----------------------- END --------------------------------
