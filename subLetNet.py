@@ -180,10 +180,10 @@ init_op = tf.initialize_all_variables()
 with tf.Session() as sess:
     sess.run(init_op)
 
-    epoches = 33
+    epochs = 33
 
-    for epoch in range(epoches):
-		print("%s\nStarting epoch %d of training...%s\n" % (bcolors.OKBLUE, epoch, bcolors.ENDC))
+    for epoch in range(epochs):
+		print("%s\nStarting epoch %d/%d of training...%s\n" % (bcolors.OKBLUE, epoch, epochs, bcolors.ENDC))
 		
 		#Evaluate net
 		testAccuracy = accuracy.eval(feed_dict={x: imagesTest, y_: labelsTest, keep_prob: 1.0})  
