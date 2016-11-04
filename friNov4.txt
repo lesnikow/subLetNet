@@ -1,0 +1,30 @@
+
+
+Rong talking with lab member suggestions:
+	Make the error better instead of bins
+		Idea:	Difference, sq difference of price
+
+	Using 3 channels
+
+	Data set augmentation: (goal, start with 10K, 33K, 100K, +)
+		Slight rotations,
+		Flipping
+		Some zooming in/ out
+
+	
+
+Next steps Mon:
+
+	Updating error		Rong
+
+	Train on 3.3K, maybe bigger, see if can get delta in accuracy	Adam
+
+	Change buckets to be one of 4 quartiles		Rong
+
+	GPU implementation,	Adam, Rong
+
+	Batchsize as needed to increase training speed (gpu only) ?
+
+
+ 
+	
