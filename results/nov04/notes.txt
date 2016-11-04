@@ -1,0 +1,10 @@
+train data:	bos100/train/	90 images
+test data: bos100/test/		10 images
+epochs:	33
+model:	two W layers with conv and maxpool, two fullconnected layers, one with dropout, as in hw3.
+best train accuracy:	1.0
+best test accuracy:		0.1
+
+impressions:	overfit to training data.
+
+next steps:		more regularization, in particular, bigger data set to train on.
