@@ -61,8 +61,9 @@ def readImages(imgDir) :
               arr2d[i, j] = data[i * col + j]
       images[index, :] = data[:]
       imageIds.append(imgId)
+      if index % 50 == 0:
+        print(str(index) + '/' + str(len(os.listdir(imgDir))))
       index += 1
-      print(str(index) + '/' + str(len(os.listdir(imgDir))))
   return imageIds, images
 
 def isNumber(s):
@@ -76,7 +77,7 @@ def isNumber(s):
 # ans store them in a hashmap, where key is the image id, and value is price bin
 def readLabels(labelPath) :
     priceBins = {}
-    binSize = 50
+    binSize = 88  # changed from 50 so that labels are in [0, 9]
     with open(labelPath, 'r') as f:
         reader = csv.reader(f)
         priceList = list(reader)
@@ -94,9 +95,9 @@ def readLabels(labelPath) :
     return priceBins
 
 # read in data
-imgDirTrain = 'bos100/train/'
-imgDirTest = 'bos100/test/'
-labelPath= 'labels/bosPrices.csv'
+imgDirTrain = 'par1000Sorted/train/256_171/'
+imgDirTest = 'par1000Sorted/test/256_171/'
+labelPath= 'labels/parPrices.csv'
 
 
 # read in train, test images
@@ -115,7 +116,7 @@ for id in imageIdsTrain:
     labelsTrain.append(priceBins[id])
 for id in imageIdsTest:
     labelsTest.append(priceBins[id])
-#print('training labels are %s' % labelsTrain)
+print('training labels are %s' % labelsTrain)
 
 # img attr
 row = 171
@@ -180,33 +181,33 @@ init_op = tf.initialize_all_variables()
 with tf.Session() as sess:
     sess.run(init_op)
 
-    epochs = 33
+    epochs = 10
 
     for epoch in range(epochs):
 		print("%s\nStarting epoch %d/%d of training...%s\n" % (bcolors.OKBLUE, epoch, epochs, bcolors.ENDC))
-		
-		#Evaluate net
-		testAccuracy = accuracy.eval(feed_dict={x: imagesTest, y_: labelsTest, keep_prob: 1.0})  
-		#print("Evaluating net during epoch %d...\n" % epoch)
-		print("%s\nEpoch %d, test accuracy is %.2g %s\n" % (bcolors.OKGREEN, epoch, testAccuracy , bcolors.ENDC) )
-
+	    
 		#Train net
 		for i in range(numImages):
-			print(str(i) + '/' + str(numImages))
+                        if i % 5 == 0 :
+                            print(str(i) + '/' + str(numImages))
 			img = imagesTrain[i, :]
 			label = labelsTrain[i]
 			labelVector = [0 for element in range(numBins)]
 			labelVector[label] = 1
 
-			if i % 5 == 0:
+			if i % 50 == 0:
 				train_accuracy = accuracy.eval( feed_dict={x:imagesTrain, y_: labelsTrain, keep_prob: 1.0} )
 				print("\n%sStep %d, training accuracy is %.2g %s\n" % (bcolors.WARNING, i, train_accuracy, bcolors.ENDC))
 			
-			predictionArray = sess.run(prediction, feed_dict={x: [img], y_: [label], keep_prob: 1.0})
-			print('prediction: \t %s' % predictionArray[0])
-			print('true label: \t %s\n' % label)
+                        #predictionArray, _ = sess.run([prediction, train_step], feed_dict={x: [img], y_: [label], keep_prob: 1.0})
+			#print('prediction: \t %s' % predictionArray[0])
+			#print('true label: \t %s\n' % label)
 
 			train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
 
+                #Evaluate net
+                print("Evaluating net during epoch %d...\n" % epoch)
+                testAccuracy = accuracy.eval(feed_dict={x: imagesTest, y_: labelsTest, keep_prob: 1.0})  
+                print("%s\nEpoch %d, test accuracy is %.2g %s\n" % (bcolors.OKGREEN, epoch, testAccuracy , bcolors.ENDC) )
 
 # ----------------------- END --------------------------------
