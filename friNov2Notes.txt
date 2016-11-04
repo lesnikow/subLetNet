@@ -1,10 +1,10 @@
 friNov2Notes	
 
 Adam:	Y	Find out how to print tf tensors in a tf session
-	Do a train/test split of data, rerun with 10 epochs 
-	Towards 10K image dataset built
-		Compute some statistics for binning
-		Goal: equifrequent buckets
+		Y	Do a train/test split of data, rerun with 10 epochs 
+			Towards 10K image dataset built
+				Y 	Compute some statistics for binning
+				Goal: equifrequent buckets
 
 Rong: 	Step towards an RGB model
 		Better weighting to downcast to greyscale
