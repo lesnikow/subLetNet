@@ -5,9 +5,8 @@ from __future__ import print_function
 # Import data
 from tensorflow.examples.tutorials.mnist import input_data
 
-import tensorflow as tf
-
 from PIL import Image
+import tensorflow as tf
 import numpy as np
 import os, math
 import csv
@@ -84,29 +83,33 @@ def readLabels(labelPath) :
     return priceBins
 
 # read in data
-imgDir = 'bos10/'
-#imgDir = 'bos100/train/'
-labelPath = 'labels/bosPrices.csv'
+imgDirTrain = 'bos10/'
+imgDirTest = 'bos100/test/'
+labelPath= 'labels/bosPrices.csv'
 
-#images
-imageIds, images = readImages(imgDir)
+
+# read in train, test images
+imageIdsTrain, imagesTrain = readImages(imgDirTrain)
+imageIdsTest, imagesTest = readImages(imgDirTest)
 
 # ground truth (labels)
 priceBins = readLabels(labelPath)
 #print(priceBins)
 # find label (prince bin) for 
 # each data point in training dataset
-labels = []
-for id in imageIds :
-    labels.append(priceBins[id])
-print('labels are %s' % labels)
+labelsTrain, labelsTest = [], []
+for id in imageIdsTrain:
+    labelsTrain.append(priceBins[id])
+for id in imageIdsTest:
+    labelsTest.append(priceBins[id])
+print('training labels are %s' % labelsTrain)
 
 # img attr
 row = 171
 col = 256
 # 1-d size of image
 imgLength = row * col
-numImages = len(imageIds)
+numImages = len(imageIdsTrain)
 numBins = 10
 
 # ----------------------- START CNN --------------------------------
@@ -167,13 +170,13 @@ with tf.Session() as sess:
     #Train net
     for i in range(numImages):
         print(str(i) + '/' + str(numImages))
-        img = images[i, :]
-        label = labels[i]
+        img = imagesTrain[i, :]
+        label = labelsTrain[i]
         labelVector = [0 for element in range(numBins)]
         labelVector[label] = 1
 
         if i%5 == 0:
-            train_accuracy = accuracy.eval( feed_dict={x:images, y_: labels, keep_prob: 1.0} )
+            train_accuracy = accuracy.eval( feed_dict={x:imagesTrain, y_: labelsTrain, keep_prob: 1.0} )
             print("\nstep %d, train accuracy is %g\n" % (i, train_accuracy))
 
         print('prediction: ')
@@ -186,6 +189,6 @@ with tf.Session() as sess:
         train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
 
     #Evaluate net
-    print("test accuracy is %g" % accuracy.eval(feed_dict={x: images, y_: labels, keep_prob: 1.0}))    #to-do: replace with x:images_train
+    #print("test accuracy is %g" % accuracy.eval(feed_dict={x: imagesTest, y_: labelsTest, keep_prob: 1.0}))    #to-do: replace with x:images_train
 
 # ----------------------- END --------------------------------
