@@ -10,6 +10,7 @@ import tensorflow as tf
 import numpy as np
 import os, math
 import csv
+import time
 
 class bcolors:
     HEADER = '\033[95m'
@@ -188,6 +189,7 @@ with tf.Session() as sess:
 
     epochs = 10
 	
+	tStartTrain = time.time()
     for epoch in range(epochs):
 		print("%s\nStarting epoch %d/%d of training...%s\n" % (bcolors.OKBLUE, epoch, epochs, bcolors.ENDC))
 	    
@@ -217,5 +219,7 @@ with tf.Session() as sess:
 				print("Evaluating test accuracy during epoch %d..." % epoch)
 				testAccuracy = accuracy.eval(feed_dict={x: imagesTest[-20:, :], y_: labelsTest[-20:], keep_prob: 1.0})  
 				print("%sStep %d, test accuracy is %.2g %s" % (bcolors.OKGREEN, i, testAccuracy, bcolors.ENDC))
-
+	
+	tEndTrain = time.time()
+	print("Training %d epoches took %.2g seconds." % (epoches, (tEndTrain - tStartTrain) ) )
 # ----------------------- END --------------------------------
