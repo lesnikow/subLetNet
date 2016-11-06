@@ -56,11 +56,11 @@ class DataReader(object):
 	            price = 0
 	        price = float(price)
 	        priceBin = -1
-	        if price >= 0 and price < 70 :
+	        if price >= 0 and price < 55 :
 	            priceBin = 0
-	        elif price >= 70 and price < 150 :
+	        elif price >= 55 and price < 75 :
 	            priceBin = 1
-	        elif price >= 150 and price < 225 :
+	        elif price >= 75 and price < 110 :
 	            priceBin = 2
 	        else :
 	            priceBin = 3
