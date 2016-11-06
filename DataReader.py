@@ -8,28 +8,28 @@ class DataReader(object):
 	def readImages(self, imgDir) :
 		row = 171
 		col = 256
-		images = np.zeros((len(os.listdir(imgDir)) - 1, row * col))
+		images = np.zeros((len(os.listdir(imgDir)), row * col))
 		imageIds = []
 		index = 0
 		for imageName in os.listdir(imgDir) :
-		  if not imageName.endswith('.jpg') :
-		      continue
-		  im = Image.open(imgDir + imageName)
-		  imgId = imageName.replace('.jpg', '')
-		  data = np.zeros(row * col)
-		  arr2d = np.zeros((row, col))
-		  pixels = im.load()
-		  for i in range(row):
-		      for j in range(col):
-		          r, g, b =  pixels[j, i]
-		          # convert rgb to greyscale
-		          data[i * col + j] = 0.2989 * r + 0.5870 * g + 0.1140 * b
-		          arr2d[i, j] = data[i * col + j]
-		  images[index, :] = data[:]
-		  imageIds.append(imgId)
-		  index += 1
-		  print(str(index) + '/' + str(len(os.listdir(imgDir)) - 1))
-		return imageIds, images
+			if not imageName.endswith('.jpg') :
+			  	continue
+			im = Image.open(imgDir + imageName)
+			imgId = imageName.replace('.jpg', '')
+			data = np.zeros(row * col)
+			arr2d = np.zeros((row, col))
+			pixels = im.load()
+			for i in range(row):
+				for j in range(col):
+					r, g, b =  pixels[j, i]
+					# convert rgb to greyscale
+					data[i * col + j] = 0.2989 * r + 0.5870 * g + 0.1140 * b
+					arr2d[i, j] = data[i * col + j]
+			images[index, :] = data[:]
+			imageIds.append(imgId)
+			index += 1
+			print(str(index) + '/' + str(len(os.listdir(imgDir))))
+		return imageIds, images[0:len(imageIds), :]
 
 	def isNumber(self, s):
 	    try:
