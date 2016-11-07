@@ -1,8 +1,8 @@
 from DataReader import DataReader
 
 # read in data
-imgDir = 'bos100/train/'
-labelPath = 'labels/bosprices.csv'
+imgDir = 'par1000Sorted/train/256x171/'
+labelPath = 'labels/parPrices.csv'
 
 # initialize
 reader = DataReader()
@@ -15,3 +15,5 @@ priceBins = reader.readLabels(labelPath)
 labels = []
 for id in imageIds :
     labels.append(priceBins[id])
+
+print('labels is %s' % labels)
