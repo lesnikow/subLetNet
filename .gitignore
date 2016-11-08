@@ -1,0 +1,5 @@
+# files for git to ignore
+
+
+# Lock files
+*.ods#
