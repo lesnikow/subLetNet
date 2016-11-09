@@ -1,0 +1,17 @@
+
+
+Notes:
+
+Directions for improvement:
+
+	Filtering out non bedroom non living room images from datasets
+		Neural net. MIT places
+	More data
+
+Continue training with the tf image retraining code
+
+Keep working/thinking about our bottom up networks
+	Error loss that is better than cross-entropy with bins
+
+Work on proposal, due Friday
+	Draft for Fri's meeting
