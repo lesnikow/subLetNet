@@ -10,6 +10,7 @@ import tensorflow as tf
 import numpy as np
 import os, math
 import csv
+import time
 
 class bcolors:
     HEADER = '\033[95m'
@@ -95,15 +96,18 @@ def readLabels(labelPath) :
     return priceBins
 
 # read in data
+#imgDirTrain = 'bos100/train/'
+#imgDirTest = 'bos100/test/'
+#labelPath= 'labels/bosPrices.csv'
 imgDirTrain = 'par1000Sorted/train/256_171/'
 imgDirTest = 'par1000Sorted/test/256_171/'
 labelPath= 'labels/parPrices.csv'
 
 
 # read in train, test images
-print("loading in train images...")
+print("loading train images...")
 imageIdsTrain, imagesTrain = readImages(imgDirTrain)
-print("loading in test images...")
+print("loading test images...")
 imageIdsTest, imagesTest = readImages(imgDirTest)
 
 # ground truth (labels)
@@ -179,35 +183,43 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 init_op = tf.initialize_all_variables()
 with tf.Session() as sess:
+    print("Initilizing tensorflow variables...")
     sess.run(init_op)
+    print("Done initilizing tensorflow variables.")
 
     epochs = 10
-
+	
+	tStartTrain = time.time()
     for epoch in range(epochs):
 		print("%s\nStarting epoch %d/%d of training...%s\n" % (bcolors.OKBLUE, epoch, epochs, bcolors.ENDC))
 	    
-		#Train net
+		#Train net, one pass through all train images
 		for i in range(numImages):
-                        if i % 5 == 0 :
-                            print(str(i) + '/' + str(numImages))
+			if i % 3 == 0 :
+				print('Training on image ' + str(i) + '/' + str(numImages) + "...")
 			img = imagesTrain[i, :]
 			label = labelsTrain[i]
 			labelVector = [0 for element in range(numBins)]
 			labelVector[label] = 1
-
-			if i % 50 == 0:
-				train_accuracy = accuracy.eval( feed_dict={x:imagesTrain, y_: labelsTrain, keep_prob: 1.0} )
-				print("\n%sStep %d, training accuracy is %.2g %s\n" % (bcolors.WARNING, i, train_accuracy, bcolors.ENDC))
+			train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
 			
-                        #predictionArray, _ = sess.run([prediction, train_step], feed_dict={x: [img], y_: [label], keep_prob: 1.0})
+			#Compute train accuracy
+			if i % 10 == 0:
+				print("Evaluating train accuracy during epoch %d..." % epoch)
+				train_accuracy = accuracy.eval( feed_dict={x:imagesTrain[-20:, :], y_: labelsTrain[-20:], keep_prob: 1.0} )
+				print("%sStep %d, training accuracy is %.2g %s" % (bcolors.WARNING, i, train_accuracy, bcolors.ENDC))
+			
+            #predictionArray, _ = sess.run([prediction, train_step], feed_dict={x: [img], y_: [label], keep_prob: 1.0})
 			#print('prediction: \t %s' % predictionArray[0])
 			#print('true label: \t %s\n' % label)
 
-			train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
 
-                #Evaluate net
-                print("Evaluating net during epoch %d...\n" % epoch)
-                testAccuracy = accuracy.eval(feed_dict={x: imagesTest, y_: labelsTest, keep_prob: 1.0})  
-                print("%s\nEpoch %d, test accuracy is %.2g %s\n" % (bcolors.OKGREEN, epoch, testAccuracy , bcolors.ENDC) )
-
+			#Evaluate net
+			if i % 10 == 0:
+				print("Evaluating test accuracy during epoch %d..." % epoch)
+				testAccuracy = accuracy.eval(feed_dict={x: imagesTest[-20:, :], y_: labelsTest[-20:], keep_prob: 1.0})  
+				print("%sStep %d, test accuracy is %.2g %s" % (bcolors.OKGREEN, i, testAccuracy, bcolors.ENDC))
+	
+	tEndTrain = time.time()
+	print("Training %d epoches took %.2g seconds." % (epoches, (tEndTrain - tStartTrain) ) )
 # ----------------------- END --------------------------------
