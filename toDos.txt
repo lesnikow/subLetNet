@@ -1,0 +1,17 @@
+To dos:
+
+
+Get GPU training working on Brown machines
+
+Make filtered data set for rooms
+	>  Hand filter on small data set
+	>  Using nnet on larger data set
+
+Have our small net working with loss v.2, either for binned loss or regression loss.
+
+Collect more data from web for par
+
+Get Caffe working on a machine
+	--> Mel Roderick 
+
+vkr@brown.edu
