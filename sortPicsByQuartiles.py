@@ -1,3 +1,8 @@
+"""
+Sorts pictures in img_dir into quartiles according to the prices in path,
+placing each quartile in its own directory.
+"""
+
 import csv
 import os
 
