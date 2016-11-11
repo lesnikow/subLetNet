@@ -6,13 +6,13 @@ placing each quartile in its own directory.
 import csv
 import os
 
-imgs_dir = 'par11_000/'
-path = 'labels/parPrices.csv'
+imgs_dir = '.'
+labels_file = '../labels/parPrices.csv'
 
 prices = []
 price_map = {}
 
-with open(path, 'rb') as csvfile:
+with open(labels_file, 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         try: 
@@ -39,21 +39,19 @@ for file in dir_list:
     print(file)
     file_name = file.split('.')[0]
     try:
-        #print(file_name)
         file_price = price_map[file_name]
-        #print(file_price)
         if file_price < q[1]:
            print('quartile 1 found')
-           os.rename(imgs_dir + file, imgs_dir + 'quart1/' + file)
+           os.rename(file, 'quart1/' + file)
         if q[1] <= file_price and file_price < q[2]:
            print('quartile 2 found')
-           os.rename(imgs_dir + file, imgs_dir + 'quart2/' + file)
+           os.rename(file, 'quart2/' + file)
         if q[2] <= file_price and file_price < q[3]:
            print('quartile 3 found')
-           os.rename(imgs_dir + file, imgs_dir + 'quart3/' + file)
+           os.rename(file, 'quart3/' + file)
         if q[3] <= file_price:
            print('quartile 4 found')
-           os.rename(imgs_dir + file, imgs_dir + 'quart4/' + file)
+           os.rename(file, 'quart4/' + file)
 
     except:
         print('Error encounted.')
