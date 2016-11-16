@@ -6,8 +6,8 @@ import csv
 class DataReader(object):
 	# read in training images from given image directory
 	def readImages(self, imgDir) :
-		row = 171
-		col = 256
+		row = 32
+		col = 32
 		images = np.zeros((len(os.listdir(imgDir)), row * col))
 		imageIds = []
 		index = 0

@@ -5,23 +5,15 @@ from __future__ import print_function
 # Import data
 from tensorflow.examples.tutorials.mnist import input_data
 
-from PIL import Image
 import tensorflow as tf
 import numpy as np
 import os, math
 import csv
 import time
+import PIL.Image
+import DataReader as dr
 
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
+dataReader = dr.DataReader()
 
 def weight_variable(shape):
   initial = tf.truncated_normal(shape, stddev=0.1)
@@ -38,81 +30,33 @@ def max_pool_2x2(x):
   return tf.nn.max_pool(x, ksize=[1, 2, 2, 1],
                         strides=[1, 2, 2, 1], padding='SAME')
 
-# read in training images from given image directory
-def readImages(imgDir) :
-  row = 171
-  col = 256
-  images = np.zeros((len(os.listdir(imgDir)), row * col))
-  imageIds = []
-  index = 0
-  for imageName in os.listdir(imgDir) :
-      if not imageName.endswith('.jpg') :
-          continue
-      im = Image.open(imgDir + imageName)
-      imgId = imageName.replace('.jpg', '')
-      data = np.zeros(row * col)
-      arr2d = np.zeros((row, col))
-      pixels = im.load()
-      for i in range(row):
-          for j in range(col):
-              r, g, b =  pixels[j, i]
-              #print(r, g, b)
-              # convert rgb to greyscale
-              data[i * col + j] = 0.2989 * r + 0.5870 * g + 0.1140 * b
-              arr2d[i, j] = data[i * col + j]
-      images[index, :] = data[:]
-      imageIds.append(imgId)
-      if index % 50 == 0:
-        print(str(index) + '/' + str(len(os.listdir(imgDir))))
-      index += 1
-  return imageIds, images
-
-def isNumber(s):
-    try:
-        float(s)
-        return True
-    except ValueError:
-        return False
-
-# read in all labels from .csv file (including the ones not in training data)
-# ans store them in a hashmap, where key is the image id, and value is price bin
-def readLabels(labelPath) :
-    priceBins = {}
-    binSize = 88  # changed from 50 so that labels are in [0, 9]
-    with open(labelPath, 'r') as f:
-        reader = csv.reader(f)
-        priceList = list(reader)
-
-    for i in range(len(priceList)) :
-        if priceList[i][0] == 'id' :
-          continue
-        id = priceList[i][0]
-        price = priceList[i][1]
-        price = price.replace('$', '')
-        if not isNumber(price) :
-           price = 0
-        price = float(price)
-        priceBins[id] = int(math.floor(price / binSize))
-    return priceBins
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 # read in data
-#imgDirTrain = 'bos100/train/'
-#imgDirTest = 'bos100/test/'
-#labelPath= 'labels/bosPrices.csv'
-imgDirTrain = 'par1000Sorted/train/256_171/'
-imgDirTest = 'par1000Sorted/test/256_171/'
+imgDirTrain = 'par_small_samples/'
+imgDirTest = 'par_small_samples/'
 labelPath= 'labels/parPrices.csv'
 
 
 # read in train, test images
 print("loading train images...")
-imageIdsTrain, imagesTrain = readImages(imgDirTrain)
+imageIdsTrain, imagesTrain = dataReader.readImages(imgDirTrain)
 print("loading test images...")
-imageIdsTest, imagesTest = readImages(imgDirTest)
+imageIdsTest, imagesTest = dataReader.readImages(imgDirTest)
 
-# ground truth (labels)
-priceBins = readLabels(labelPath)
-#print(priceBins)
+# Read in labels
+priceBins = dataReader.readLabels(labelPath)
+#print("priceBins is %s \n" % priceBins)
+
+
 # find label (prince bin) for 
 # each data point in training dataset
 labelsTrain, labelsTest = [], []
@@ -123,8 +67,8 @@ for id in imageIdsTest:
 print('training labels are %s' % labelsTrain)
 
 # img attr
-row = 171
-col = 256
+row = 32
+col = 32
 # 1-d size of image
 imgLength = row * col
 numImages = len(imageIdsTrain)
@@ -189,7 +133,7 @@ with tf.Session() as sess:
 
     epochs = 10
 	
-	tStartTrain = time.time()
+    tStartTrain = time.time()
     for epoch in range(epochs):
 		print("%s\nStarting epoch %d/%d of training...%s\n" % (bcolors.OKBLUE, epoch, epochs, bcolors.ENDC))
 	    
@@ -220,6 +164,6 @@ with tf.Session() as sess:
 				testAccuracy = accuracy.eval(feed_dict={x: imagesTest[-20:, :], y_: labelsTest[-20:], keep_prob: 1.0})  
 				print("%sStep %d, test accuracy is %.2g %s" % (bcolors.OKGREEN, i, testAccuracy, bcolors.ENDC))
 	
-	tEndTrain = time.time()
-	print("Training %d epoches took %.2g seconds." % (epoches, (tEndTrain - tStartTrain) ) )
+    tEndTrain = time.time()
+    print("Training %d epochs took %.2g seconds." % (epochs, (tEndTrain - tStartTrain) ) )
 # ----------------------- END --------------------------------
