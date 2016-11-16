@@ -3,3 +3,6 @@
 
 # Lock files
 *.ods#
+
+# Compiled filed
+*.pyc
