@@ -6,6 +6,7 @@ import csv
 class DataReader(object):
 	# read in training images from given image directory
 	def readImages(self, imgDir) :
+                print("Reading in images...")
 		row = 32
 		col = 32
 		images = np.zeros((len(os.listdir(imgDir)), row * col))

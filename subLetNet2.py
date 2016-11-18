@@ -1,8 +1,6 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-
-# Import data
 from tensorflow.examples.tutorials.mnist import input_data
 
 import tensorflow as tf
@@ -13,9 +11,30 @@ import time
 import PIL.Image
 import DataReader as dr
 import Colors
+import ConvNet as cn
+
+#To-Dos:
+#1. encapsulate conv net details into a ConvNet object
+
+imgDirTrain = 'bos100/train/'
+imgDirTest = 'bos100/test/'
+labelPath= 'labels/bos/prices.csv'
+
+# Number of classifcation bins
+numBins = 4 
 
 dataReader = dr.DataReader()
 colors = Colors.Colors()
+convNet = cn.ConvNet(1e-4)
+
+# Read in train, test images
+imageIdsTrain, imagesTrain = dataReader.readImages(imgDirTrain)
+imageIdsTest, imagesTest = dataReader.readImages(imgDirTest)
+
+# Read in labels
+priceBins = dataReader.readLabels(labelPath)
+
+
 
 def weight_variable(shape):
   initial = tf.truncated_normal(shape, stddev=0.1)
@@ -32,43 +51,23 @@ def max_pool_2x2(x):
   return tf.nn.max_pool(x, ksize=[1, 2, 2, 1],
                         strides=[1, 2, 2, 1], padding='SAME')
 
-# read in data
-imgDirTrain = 'par_small_samples/'
-imgDirTest = 'par_small_samples/'
-labelPath= 'labels/parPrices.csv'
-
-
-# read in train, test images
-print("loading train images...")
-imageIdsTrain, imagesTrain = dataReader.readImages(imgDirTrain)
-print("loading test images...")
-imageIdsTest, imagesTest = dataReader.readImages(imgDirTest)
-
-# Read in labels
-priceBins = dataReader.readLabels(labelPath)
-#print("priceBins is %s \n" % priceBins)
-
-
-# find label (prince bin) for 
-# each data point in training dataset
+# Prices
 labelsTrain, labelsTest = [], []
 for id in imageIdsTrain:
     labelsTrain.append(priceBins[id])
 for id in imageIdsTest:
     labelsTest.append(priceBins[id])
+
 print('training labels are %s' % labelsTrain)
 
-# img attr
+# Image attributes
 row = 32
 col = 32
-# 1-d size of image
 imgLength = row * col
 numImages = len(imageIdsTrain)
-numBins = 10
 
-# ----------------------- START CNN --------------------------------
-#sess = tf.InteractiveSession()
 
+# Setup net
 x = tf.placeholder(tf.float32, [None, None])
 y_ = tf.placeholder(tf.int64, [None])
 
@@ -111,47 +110,25 @@ b_fc2 = bias_variable([numBins])
 y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 prediction = tf.argmax(y_conv,1)
 
-# train and evaluate
 cross_entropy = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(y_conv, y_))
 train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 correct_prediction = tf.equal(tf.argmax(y_conv,1), y_)
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-init_op = tf.initialize_all_variables()
-with tf.Session() as sess:
-    print("Initilizing tensorflow variables...")
-    sess.run(init_op)
-    print("Done initilizing tensorflow variables.")
+train_step = tf.trainAdamOptimizer(1e-4).minimize(cross_entropy)
 
-    epochs = 3
-	
-    tStartTrain = time.time()
-    for epoch in range(epochs):
-		print("%s\nStarting epoch %d/%d of training...%s\n" % (colors.OKBLUE, epoch, epochs, colors.ENDC))
-	    
-		#Train net, one pass through all train images
-		for i in range(numImages):
-			if i % 3 == 0 :
-				print('Training on image ' + str(i) + '/' + str(numImages) + "...")
-			img = imagesTrain[i, :]
-			label = labelsTrain[i]
-			labelVector = [0 for element in range(numBins)]
-			labelVector[label] = 1
-			train_step.run(feed_dict={x: [img], y_: [label], keep_prob: 0.5})
-			
-			#Compute train accuracy
-			if i % 10 == 0:
-				print("Evaluating train accuracy during epoch %d..." % epoch)
-				train_accuracy = accuracy.eval( feed_dict={x:imagesTrain[-20:, :], y_: labelsTrain[-20:], keep_prob: 1.0} )
-				print("%sStep %d, training accuracy is %.2g %s" % (colors.WARNING, i, train_accuracy, colors.ENDC))
-			
 
-			#Evaluate net
-			if i % 10 == 0:
-				print("Evaluating test accuracy during epoch %d..." % epoch)
-				testAccuracy = accuracy.eval(feed_dict={x: imagesTest[-20:, :], y_: labelsTest[-20:], keep_prob: 1.0})  
-				print("%sStep %d, test accuracy is %.2g %s" % (colors.OKGREEN, i, testAccuracy, colors.ENDC))
-	
-    tEndTrain = time.time()
-    print("Training %d epochs took %.2g seconds." % (epochs, (tEndTrain - tStartTrain) ) )
-# ----------------------- END --------------------------------
+# Train net
+mbatches = input('How many minibatches to train on? ')
+batchsz = input('How many in each minibatch? ')
+print('You entered %d minibatches' % mbatches)
+print("Training on %d minibatches of size %d..." % ( mbatches, batchsz) )
+
+timeStart = time.time()
+for i in range(mbatches):
+    if i % 50 == 0:
+       pass
+
+
+timeEnd = time.time()
+
