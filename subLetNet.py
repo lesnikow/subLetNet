@@ -12,6 +12,9 @@ import os, math
 import csv
 import time
 
+# To-do:
+# 1. Get training done in batches
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -99,8 +102,8 @@ def readLabels(labelPath) :
 #imgDirTrain = 'bos100/train/'
 #imgDirTest = 'bos100/test/'
 #labelPath= 'labels/bosPrices.csv'
-imgDirTrain = 'par1000Sorted/train/256_171/'
-imgDirTest = 'par1000Sorted/test/256_171/'
+imgDirTrain = 'par1000Sorted/train/256x171/'
+imgDirTest = 'par1000Sorted/test/256x171/'
 labelPath= 'labels/parPrices.csv'
 
 
@@ -189,7 +192,7 @@ with tf.Session() as sess:
 
     epochs = 10
 	
-	tStartTrain = time.time()
+    tStartTrain = time.time()
     for epoch in range(epochs):
 		print("%s\nStarting epoch %d/%d of training...%s\n" % (bcolors.OKBLUE, epoch, epochs, bcolors.ENDC))
 	    
@@ -209,17 +212,12 @@ with tf.Session() as sess:
 				train_accuracy = accuracy.eval( feed_dict={x:imagesTrain[-20:, :], y_: labelsTrain[-20:], keep_prob: 1.0} )
 				print("%sStep %d, training accuracy is %.2g %s" % (bcolors.WARNING, i, train_accuracy, bcolors.ENDC))
 			
-            #predictionArray, _ = sess.run([prediction, train_step], feed_dict={x: [img], y_: [label], keep_prob: 1.0})
-			#print('prediction: \t %s' % predictionArray[0])
-			#print('true label: \t %s\n' % label)
-
-
 			#Evaluate net
 			if i % 10 == 0:
 				print("Evaluating test accuracy during epoch %d..." % epoch)
 				testAccuracy = accuracy.eval(feed_dict={x: imagesTest[-20:, :], y_: labelsTest[-20:], keep_prob: 1.0})  
 				print("%sStep %d, test accuracy is %.2g %s" % (bcolors.OKGREEN, i, testAccuracy, bcolors.ENDC))
 	
-	tEndTrain = time.time()
-	print("Training %d epoches took %.2g seconds." % (epoches, (tEndTrain - tStartTrain) ) )
+    tEndTrain = time.time()
+    print("Training %d epoches took %.2g seconds." % (epoches, (tEndTrain - tStartTrain) ) )
 # ----------------------- END --------------------------------
