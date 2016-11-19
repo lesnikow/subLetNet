@@ -99,8 +99,8 @@ def readLabels(labelPath) :
 #imgDirTrain = 'bos100/train/'
 #imgDirTest = 'bos100/test/'
 #labelPath= 'labels/bosPrices.csv'
-imgDirTrain = 'par1000Sorted/train/256_171/'
-imgDirTest = 'par1000Sorted/test/256_171/'
+imgDirTrain = 'par1000Sorted/train/256x171/'
+imgDirTest = 'par1000Sorted/test/256x171/'
 labelPath= 'labels/parPrices.csv'
 
 
