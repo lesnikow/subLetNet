@@ -1,8 +1,13 @@
+"""
+subLetNet.py
+
+Deep learning on house share images
+"""
+
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 from tensorflow.examples.tutorials.mnist import input_data
-
 import tensorflow as tf
 import numpy as np
 import os, math
@@ -15,10 +20,15 @@ import ConvNet as cn
 
 #To-Dos:
 #1. encapsulate conv net details into a ConvNet object
+#2. encapsulate other guys
 
-imgDirTrain = 'bos100/train/'
-imgDirTest = 'bos100/test/'
-labelPath= 'labels/bos/prices.csv'
+FLAGS = tf.app.flags.FLAGS
+tf.app.flags.DEFINE_float('learning_rate', 1e-4, 'Learning Rate for Adam Optimizer.')
+tf.app.flags.DEFINE_integer('batch_size', 40, 'Batch size for training.')
+
+IMGS_DIR_TEST = 'bos100/train/'
+IMGS_DIR_TRAIN = 'bos100/test/'
+LABELS_DIR = 'labels/bos/prices.csv'
 
 # Number of classifcation bins
 numBins = 4 
@@ -28,28 +38,11 @@ colors = Colors.Colors()
 convNet = cn.ConvNet(1e-4)
 
 # Read in train, test images
-imageIdsTrain, imagesTrain = dataReader.readImages(imgDirTrain)
-imageIdsTest, imagesTest = dataReader.readImages(imgDirTest)
+imageIdsTrain, imagesTrain = dataReader.readImages(IMGS_DIR_TRAIN)
+imageIdsTest, imagesTest = dataReader.readImages(IMGS_DIR_TEST)
 
 # Read in labels
-priceBins = dataReader.readLabels(labelPath)
-
-
-
-def weight_variable(shape):
-  initial = tf.truncated_normal(shape, stddev=0.1)
-  return tf.Variable(initial)
-
-def bias_variable(shape):
-  initial = tf.constant(0.1, shape=shape)
-  return tf.Variable(initial)
-
-def conv2d(x, W):
-  return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding='SAME')
-
-def max_pool_2x2(x):
-  return tf.nn.max_pool(x, ksize=[1, 2, 2, 1],
-                        strides=[1, 2, 2, 1], padding='SAME')
+priceBins = dataReader.readLabels(LABELS_DIR)
 
 # Prices
 labelsTrain, labelsTest = [], []
@@ -67,6 +60,21 @@ imgLength = row * col
 numImages = len(imageIdsTrain)
 
 
+# Net
+def weight_variable(shape):
+  initial = tf.truncated_normal(shape, stddev=0.1)
+  return tf.Variable(initial)
+
+def bias_variable(shape):
+  initial = tf.constant(0.1, shape=shape)
+  return tf.Variable(initial)
+
+def conv2d(x, W):
+  return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding='SAME')
+
+def max_pool_2x2(x):
+  return tf.nn.max_pool(x, ksize=[1, 2, 2, 1],
+                        strides=[1, 2, 2, 1], padding='SAME')
 # Setup net
 x = tf.placeholder(tf.float32, [None, None])
 y_ = tf.placeholder(tf.int64, [None])
@@ -115,7 +123,7 @@ train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 correct_prediction = tf.equal(tf.argmax(y_conv,1), y_)
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-train_step = tf.trainAdamOptimizer(1e-4).minimize(cross_entropy)
+train_step = tf.train.trainAdamOptimizer(1e-4).minimize(cross_entropy)
 
 
 # Train net
