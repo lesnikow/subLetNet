@@ -1,0 +1,557 @@
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.974237
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0257631
+../par11_000/quart1/1000434.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.99931
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00068996
+../par11_000/quart1/10004492.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.883185
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.116815
+../par11_000/quart1/1000747.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.999946
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 5.40491e-05
+../par11_000/quart1/10008149.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.997878
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00212163
+../par11_000/quart1/10010003.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+^[[CI tensorflow/examples/label_image/main.cc:205] indoor (1): 0.892916
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.107084
+../par11_000/quart1/10012798.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998228
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00177234
+../par11_000/quart1/1001279.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.983243
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0167566
+../par11_000/quart1/10012851.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999908
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 9.23256e-05
+../par11_000/quart1/10013442.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.994366
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.005634
+../par11_000/quart1/10014464.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.932791
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0672088
+../par11_000/quart1/10017527.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.99576
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00423961
+../par11_000/quart1/10026188.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.929608
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.0703925
+../par11_000/quart1/1002663.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998706
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00129379
+../par11_000/quart1/10027197.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.922552
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0774485
+../par11_000/quart1/10029937.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998443
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00155671
+../par11_000/quart1/10030944.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.990057
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00994335
+../par11_000/quart1/10031718.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.959681
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.0403193
+../par11_000/quart1/10037227.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.99386
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00614018
+../par11_000/quart1/10037248.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.519589
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.480411
+../par11_000/quart1/10039877.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998851
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00114945
+../par11_000/quart1/10040296.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.999975
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 2.46676e-05
+../par11_000/quart1/10046923.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.997827
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00217307
+../par11_000/quart1/10047484.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.870829
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.129171
+../par11_000/quart1/10047919.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.994222
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00577825
+../par11_000/quart1/10047973.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999405
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00059486
+../par11_000/quart1/10048000.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.982291
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0177087
+../par11_000/quart1/10049405.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.73282
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.26718
+../par11_000/quart1/10051157.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.997652
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00234847
+../par11_000/quart1/10051413.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.985589
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0144112
+../par11_000/quart1/10051783.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.996071
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00392901
+../par11_000/quart1/10052435.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.608549
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.391451
+../par11_000/quart1/10058211.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.99999
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 1.00519e-05
+../par11_000/quart1/10059984.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.96662
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0333801
+../par11_000/quart1/10063728.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.529255
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.470745
+../par11_000/quart1/10064047.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.943423
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0565767
+../par11_000/quart1/10068507.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.99857
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00143037
+../par11_000/quart1/10069873.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.65127
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.34873
+../par11_000/quart1/1007571.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.90548
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0945205
+../par11_000/quart1/10077605.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.996924
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00307641
+../par11_000/quart1/1008191.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.997031
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00296904
+../par11_000/quart1/10082720.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.999115
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.000884546
+../par11_000/quart1/10084137.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.525738
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.474262
+../par11_000/quart1/1008422.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998844
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00115613
+../par11_000/quart1/10089137.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999467
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00053255
+../par11_000/quart1/10090899.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.981995
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0180049
+../par11_000/quart1/10092382.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.698074
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.301926
+../par11_000/quart1/10093327.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998797
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0012026
+../par11_000/quart1/10095312.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.525458
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.474542
+../par11_000/quart1/10095394.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999377
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.000623271
+../par11_000/quart1/10097602.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.986977
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0130226
+../par11_000/quart1/10098661.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.834293
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.165707
+../par11_000/quart1/10099626.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.983524
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0164757
+../par11_000/quart1/10108150.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.975406
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0245944
+../par11_000/quart1/10109428.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.831747
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.168253
+../par11_000/quart1/10110127.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.97472
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0252802
+../par11_000/quart1/10110247.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.999999
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 7.5944e-07
+../par11_000/quart1/10111408.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.992795
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00720534
+../par11_000/quart1/10112348.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.840299
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.159701
+../par11_000/quart1/10112463.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.968169
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0318313
+../par11_000/quart1/10113155.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.978912
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0210885
+../par11_000/quart1/10114506.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.990665
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00933524
+../par11_000/quart1/10114974.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.833515
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.166485
+../par11_000/quart1/10118655.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.953866
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0461341
+../par11_000/quart1/10119234.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999837
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00016272
+../par11_000/quart1/10120879.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998611
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00138868
+../par11_000/quart1/10122690.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.9993
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.000699484
+../par11_000/quart1/10123623.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999385
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.000615071
+../par11_000/quart1/10127462.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.830817
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.169183
+../par11_000/quart1/10130103.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+^C
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.974237
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0257631
+../par11_000/quart1/1000434.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.99931
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00068996
+../par11_000/quart1/10004492.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.883185
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.116815
+../par11_000/quart1/1000747.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.999946
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 5.40491e-05
+../par11_000/quart1/10008149.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.997878
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00212163
+../par11_000/quart1/10010003.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+^[[CI tensorflow/examples/label_image/main.cc:205] indoor (1): 0.892916
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.107084
+../par11_000/quart1/10012798.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998228
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00177234
+../par11_000/quart1/1001279.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.983243
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0167566
+../par11_000/quart1/10012851.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999908
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 9.23256e-05
+../par11_000/quart1/10013442.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.994366
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.005634
+../par11_000/quart1/10014464.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.932791
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0672088
+../par11_000/quart1/10017527.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.99576
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00423961
+../par11_000/quart1/10026188.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.929608
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.0703925
+../par11_000/quart1/1002663.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998706
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00129379
+../par11_000/quart1/10027197.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.922552
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0774485
+../par11_000/quart1/10029937.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998443
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00155671
+../par11_000/quart1/10030944.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.990057
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00994335
+../par11_000/quart1/10031718.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.959681
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.0403193
+../par11_000/quart1/10037227.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.99386
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00614018
+../par11_000/quart1/10037248.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.519589
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.480411
+../par11_000/quart1/10039877.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998851
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00114945
+../par11_000/quart1/10040296.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.999975
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 2.46676e-05
+../par11_000/quart1/10046923.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.997827
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00217307
+../par11_000/quart1/10047484.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.870829
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.129171
+../par11_000/quart1/10047919.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.994222
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00577825
+../par11_000/quart1/10047973.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999405
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00059486
+../par11_000/quart1/10048000.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.982291
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0177087
+../par11_000/quart1/10049405.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.73282
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.26718
+../par11_000/quart1/10051157.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.997652
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00234847
+../par11_000/quart1/10051413.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.985589
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0144112
+../par11_000/quart1/10051783.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.996071
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00392901
+../par11_000/quart1/10052435.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.608549
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.391451
+../par11_000/quart1/10058211.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.99999
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 1.00519e-05
+../par11_000/quart1/10059984.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.96662
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0333801
+../par11_000/quart1/10063728.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.529255
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.470745
+../par11_000/quart1/10064047.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.943423
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0565767
+../par11_000/quart1/10068507.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.99857
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00143037
+../par11_000/quart1/10069873.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.65127
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.34873
+../par11_000/quart1/1007571.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.90548
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0945205
+../par11_000/quart1/10077605.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.996924
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00307641
+../par11_000/quart1/1008191.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.997031
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00296904
+../par11_000/quart1/10082720.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.999115
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.000884546
+../par11_000/quart1/10084137.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.525738
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.474262
+../par11_000/quart1/1008422.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998844
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00115613
+../par11_000/quart1/10089137.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999467
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00053255
+../par11_000/quart1/10090899.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.981995
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0180049
+../par11_000/quart1/10092382.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.698074
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.301926
+../par11_000/quart1/10093327.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998797
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0012026
+../par11_000/quart1/10095312.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.525458
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.474542
+../par11_000/quart1/10095394.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999377
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.000623271
+../par11_000/quart1/10097602.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.986977
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0130226
+../par11_000/quart1/10098661.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.834293
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.165707
+../par11_000/quart1/10099626.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.983524
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0164757
+../par11_000/quart1/10108150.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.975406
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0245944
+../par11_000/quart1/10109428.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.831747
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.168253
+../par11_000/quart1/10110127.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.97472
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0252802
+../par11_000/quart1/10110247.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.999999
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 7.5944e-07
+../par11_000/quart1/10111408.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.992795
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00720534
+../par11_000/quart1/10112348.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.840299
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.159701
+../par11_000/quart1/10112463.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.968169
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0318313
+../par11_000/quart1/10113155.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.978912
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0210885
+../par11_000/quart1/10114506.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.990665
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00933524
+../par11_000/quart1/10114974.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.833515
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.166485
+../par11_000/quart1/10118655.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.953866
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.0461341
+../par11_000/quart1/10119234.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999837
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00016272
+../par11_000/quart1/10120879.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.998611
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.00138868
+../par11_000/quart1/10122690.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.9993
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.000699484
+../par11_000/quart1/10123623.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.999385
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.000615071
+../par11_000/quart1/10127462.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.830817
+I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.169183
+../par11_000/quart1/10130103.jpg
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+^C
+
