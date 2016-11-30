@@ -11,17 +11,10 @@ import numpy as np
 import os, math
 import csv
 import time
+import colors
 
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
+# To-do:
+# 1. Get training done in batches
 
 def weight_variable(shape):
   initial = tf.truncated_normal(shape, stddev=0.1)
@@ -99,8 +92,8 @@ def readLabels(labelPath) :
 #imgDirTrain = 'bos100/train/'
 #imgDirTest = 'bos100/test/'
 #labelPath= 'labels/bosPrices.csv'
-imgDirTrain = 'par1000Sorted/train/256_171/'
-imgDirTest = 'par1000Sorted/test/256_171/'
+imgDirTrain = 'par1000Sorted/train/256x171/'
+imgDirTest = 'par1000Sorted/test/256x171/'
 labelPath= 'labels/parPrices.csv'
 
 
@@ -182,6 +175,9 @@ correct_prediction = tf.equal(tf.argmax(y_conv,1), y_)
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 init_op = tf.initialize_all_variables()
+
+bcolors = colors.Colors()
+
 with tf.Session() as sess:
     print("Initilizing tensorflow variables...")
     sess.run(init_op)
@@ -189,7 +185,7 @@ with tf.Session() as sess:
 
     epochs = 10
 	
-	tStartTrain = time.time()
+    tStartTrain = time.time()
     for epoch in range(epochs):
 		print("%s\nStarting epoch %d/%d of training...%s\n" % (bcolors.OKBLUE, epoch, epochs, bcolors.ENDC))
 	    
@@ -209,17 +205,12 @@ with tf.Session() as sess:
 				train_accuracy = accuracy.eval( feed_dict={x:imagesTrain[-20:, :], y_: labelsTrain[-20:], keep_prob: 1.0} )
 				print("%sStep %d, training accuracy is %.2g %s" % (bcolors.WARNING, i, train_accuracy, bcolors.ENDC))
 			
-            #predictionArray, _ = sess.run([prediction, train_step], feed_dict={x: [img], y_: [label], keep_prob: 1.0})
-			#print('prediction: \t %s' % predictionArray[0])
-			#print('true label: \t %s\n' % label)
-
-
 			#Evaluate net
 			if i % 10 == 0:
 				print("Evaluating test accuracy during epoch %d..." % epoch)
 				testAccuracy = accuracy.eval(feed_dict={x: imagesTest[-20:, :], y_: labelsTest[-20:], keep_prob: 1.0})  
 				print("%sStep %d, test accuracy is %.2g %s" % (bcolors.OKGREEN, i, testAccuracy, bcolors.ENDC))
 	
-	tEndTrain = time.time()
-	print("Training %d epoches took %.2g seconds." % (epoches, (tEndTrain - tStartTrain) ) )
+    tEndTrain = time.time()
+    print("Training %d epochs took %.2g seconds." % (epochs, (tEndTrain - tStartTrain) ) )
 # ----------------------- END --------------------------------
