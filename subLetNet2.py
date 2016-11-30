@@ -1,5 +1,5 @@
 """
-subLetNet.py
+subLetNet2.py
 
 Deep learning on house share images
 """

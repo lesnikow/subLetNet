@@ -11,20 +11,10 @@ import numpy as np
 import os, math
 import csv
 import time
+import colors
 
 # To-do:
 # 1. Get training done in batches
-
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
 
 def weight_variable(shape):
   initial = tf.truncated_normal(shape, stddev=0.1)
@@ -185,6 +175,9 @@ correct_prediction = tf.equal(tf.argmax(y_conv,1), y_)
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 init_op = tf.initialize_all_variables()
+
+bcolors = colors.Colors()
+
 with tf.Session() as sess:
     print("Initilizing tensorflow variables...")
     sess.run(init_op)
@@ -219,5 +212,5 @@ with tf.Session() as sess:
 				print("%sStep %d, test accuracy is %.2g %s" % (bcolors.OKGREEN, i, testAccuracy, bcolors.ENDC))
 	
     tEndTrain = time.time()
-    print("Training %d epoches took %.2g seconds." % (epoches, (tEndTrain - tStartTrain) ) )
+    print("Training %d epochs took %.2g seconds." % (epochs, (tEndTrain - tStartTrain) ) )
 # ----------------------- END --------------------------------
