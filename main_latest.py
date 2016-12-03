@@ -1,13 +1,9 @@
-
 """
 main.py
 Implementation of a convolutional neural network for MNIST in tensorFlow.
-
-Author: Adam Lesnikowski
-Version: Nov 20, 2016
 """
 import sys
-sys.path.insert(0, 'hw4Bigram')
+sys.path.insert(0, 'modules')
 import tensorflow as tf
 import numpy as np
 import time as ti
