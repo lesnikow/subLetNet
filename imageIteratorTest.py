@@ -1,5 +1,4 @@
 
-
 from imageIterator import ImageIterator
 
 imageIter = ImageIterator("pics/")
