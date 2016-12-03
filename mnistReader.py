@@ -25,6 +25,7 @@ class MnistReader:
        
         #Compute data set properties 
         self.n_train = self.X_train.shape[0]
+        self.n_test = self.X_test.shape[0]
         self.d_train = self.X_train.shape[1]
         self.bins = 10
 
@@ -37,8 +38,10 @@ class MnistReader:
         
     def next_test_batch(self, batchsz):
         """ Returns the next random batch of test images, of batchsize batchsize """
-        one_hot = self.oneHot(self.y_test[:batchsz], self.bins)
-        return (self.X_test[:batchsz], one_hot)
+        self.batch_start_index = random.randint(0, self.n_test - batchsz - 1)
+        i = self.batch_start_index 
+        one_hot = self.oneHot(self.y_test[i: i + batchsz], self.bins)
+        return (self.X_test[i: i + batchsz], one_hot)
 
     def oneHot(self, labels, bins):
         """Returns one-hot encoding of label.
