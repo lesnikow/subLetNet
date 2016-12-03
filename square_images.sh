@@ -1,5 +1,5 @@
 #!/bin/bash
-d=64
+d=28
 for f in *.jpg
 do 
 	echo $f
