@@ -4,13 +4,14 @@ Class for convnets for mnist
 import tensorflow as tf
 
 class ConvNet():
-	def __init__(self, learning_rate):
+	def __init__(self, learning_rate, batchsz):
 		"""	
 		Instantiate a ConvNet model.
 		:param: learning_rate: learning rate for the SGD optimizer
 		"""
 		self.learning_rate = learning_rate
-		self.x = tf.placeholder(tf.float32, [None, 784])
+		self.batchsz = batchsz
+		self.x = tf.placeholder(tf.float32, [self.batchsz, 784])
 		self.y_ = tf.placeholder(tf.float32, [None, 10])
 		self.instantiate_weights()
 		self.logits = self.inference()
@@ -22,9 +23,10 @@ class ConvNet():
 		"""
 		Instantiate the network variables
 		"""
-		#Image
-		self.x_image = tf.reshape(self.x, [-1, 28, 28, 1])
-	
+		#Image, labels
+		self.x_image = tf.reshape(self.x, [self.batchsz, 28, 28, 1])
+		self.y_image = tf.reshape(self.y_, [self.batchsz, 10, 1])
+		
 		#Creates 32 conv filters of size 5x5 
 		self.W_conv1 = self.weight_variable( [5, 5, 1, 32] )  
 		self.b_conv1 = self.bias_variable( [32] )
@@ -42,8 +44,11 @@ class ConvNet():
 	def inference(self):
 		"""
 		Build the inference computation graph for the model, going from the input to the output
-		logits (before final softmax activation).
+		logits before final softmax activation).
 		"""
+		#self.x_image = tf.Print(self.x_image, [self.x_image], message="x_image is: ", summarize=100)
+		#self.y_image = tf.Print(self.y_image, [self.y_image], message="y_image is: ", summarize=100)
+		
 		#First conv and pooling
 		self.h_conv1 = tf.nn.relu( self.conv2d(self.x_image, self.W_conv1) + self.b_conv1)
 		self.h_pool1 = self.max_pool_2x2(self.h_conv1)
@@ -59,17 +64,23 @@ class ConvNet():
 		#Dropout after first fully connected layer		
 		self.keep_prob = tf.placeholder(tf.float32)
 		self.h_fc1_drop = tf.nn.dropout(self.h_fc1, self.keep_prob)
-
-		return  tf.matmul(self.h_fc1_drop, self.W_fc2) + self.b_fc2
- 
+		#self.h_fc1_drop = tf.Print(self.h_fc1_drop, [self.h_fc1_drop], message="h_fc1_drop is: ", summarize=10)
+		
+		self.out_logits = tf.matmul(self.h_fc1_drop, self.W_fc2) + self.b_fc2
+		#self.out_logits = tf.Print(self.out_logits, [self.out_logits], message="out_logits is: ", summarize=100)
+		
+  		return self.out_logits
 	
 	def loss(self):
 		"""
 		Build the cross-entropy loss computation graph.
 		"""
 		softmax = tf.nn.softmax(self.logits)
+		sotmax = tf.Print(softmax, [softmax], message="softmax is: ", summarize=10)
 		cross_entropy = tf.reduce_mean(-tf.reduce_sum(self.y_ * tf.log(softmax ), reduction_indices=[1]))  
                 #self.y_ is the 1-hot enconding of the image label
+		self.y_image = tf.Print(self.y_image, [self.y_image], message = "self.y_image is: ", summarize=10)
+		
 		return softmax, cross_entropy
 
 	def train(self):
@@ -92,7 +103,7 @@ class ConvNet():
 		Returns a weight variable of the inputted shape with random initial values.
 		:param shape: Size of of the weight variable
 		"""
-		initial = tf.truncated_normal(shape, stddev=0.1)
+		initial = tf.truncated_normal(shape, stddev=0.01)
 		return tf.Variable(initial)
 	
 	@staticmethod
