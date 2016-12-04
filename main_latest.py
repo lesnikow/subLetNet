@@ -19,7 +19,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 eval_train_accuracy_every = 50
 plot_train_accuracy_every = 50
 mbatches = int(1.0e3)
-batchsz = 64 
+batchsz = 32
 
 measure_test_batches = 50
 
