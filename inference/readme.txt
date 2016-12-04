@@ -21,4 +21,5 @@
 
 4. go to parse.py and change the path to the output file generated in 3)
 
-5. run parse.py (not completed yet)
+5. run parse.py 
+	a) you will find filtered images in 'inference_result' folder

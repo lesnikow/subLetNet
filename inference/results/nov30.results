@@ -552,6 +552,3 @@ W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalizat
 I tensorflow/examples/label_image/main.cc:205] outdoor (0): 0.830817
 I tensorflow/examples/label_image/main.cc:205] indoor (1): 0.169183
 ../par11_000/quart1/10130103.jpg
-W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
-^C
-
