@@ -1,6 +1,7 @@
 """
 main.py
 Implementation of a convolutional neural network for MNIST in tensorFlow.
+Author: Adam Lesnikowski
 """
 import sys
 sys.path.insert(0, 'modules')
