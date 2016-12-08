@@ -6,3 +6,6 @@
 
 # Compiled filed
 *.pyc
+
+# Datasets that auto-download
+MNIST_data*
