@@ -19,14 +19,14 @@ from logger import Logger
 from tensorflow.examples.tutorials.mnist import input_data
 
 mbatches = int(8.0e4)
-batchsz = 32
+batchsz = 128
+l_rate = 0.0625e-5
 interval = 20
 
 eval_train_accuracy_every = interval
 plot_train_accuracy_every = interval
 eval_test_accuracy_every = interval
 plot_test_accuracy_every = interval
-measure_test_batches = 100
 
 #Main Training Block
 if __name__ == "__main__":
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     #imageIter = ImageIterator("lon_small/square_28/")
     
     with tf.Session() as sess:
-        convNet = ConvNet(0.25e-5, batchsz)
+        convNet = ConvNet(l_rate, batchsz)
         train_logger = Logger("Train set")
         test_logger = Logger("Test set")
         sess.run(tf.initialize_all_variables())
@@ -77,7 +77,7 @@ if __name__ == "__main__":
             #    plotter.plotTrainLossAccuracy('results/')
 
             if i % plot_test_accuracy_every == 0:
-                plotter.plotTrainVsTestAcc('results/')
+                plotter.plotTrainVsTestAcc('results/', batchsz)
                 
 
 
@@ -86,6 +86,7 @@ if __name__ == "__main__":
 
         # Measure net accuracy
         print('Measuring net accuracy on %d batches...' % measure_test_batches)
+        measure_test_batches = 100
         sum_acc = 0
         for i in range(measure_test_batches):
             batch_imgs, batch_labs = mnistReader.next_test_batch(batchsz)
